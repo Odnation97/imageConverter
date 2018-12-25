@@ -15,12 +15,12 @@
       </font>
     </Label>
     <Label alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="23.0" layoutY="83.0" prefHeight="44.0" prefWidth="123.0" text="File Path:" />
-    <Button fx:id="browseBtn" layoutX="146.0" layoutY="157.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="123.0" text="Browse">
+    <Label fx:id="pathLabel" layoutX="146.0" layoutY="83.0" prefHeight="44.0" prefWidth="244.0" text="" textAlignment="LEFT" />
+    <Button fx:id="browseBtn" layoutX="146.0" layoutY="157.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="123.0" text="Browse" onAction="#findImage">
       <font>
         <Font size="20.0" fx:id="x2" />
       </font>
     </Button>
-    <Button fx:id="convertBtn" font="$x2" layoutX="146.0" layoutY="223.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="123.0" text="Convert" />
-    <Label fx:id="pathLabel" layoutX="146.0" layoutY="83.0" prefHeight="44.0" prefWidth="244.0" text="" textAlignment="LEFT" />
+    <Button fx:id="convertBtn" font="$x2" layoutX="146.0" layoutY="223.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="123.0" text="Convert" onAction="#convertImg"/>
   </children>
 </AnchorPane>
