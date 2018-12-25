@@ -9,7 +9,7 @@ import java.io.File;
 
 public interface Converter 
 {
-    default void convertFromJpg(File jpgFile)
+    default void convertJpg(File jpgFile)
     {
         
     }
