@@ -1,12 +1,15 @@
 package Controller;
 
 import Model.Features;
+import Model.Converter;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
@@ -17,7 +20,7 @@ import javafx.stage.Stage;
  * @author o_noo
  */
 
-public class mainInterfaceController implements Initializable, Features {
+public class mainInterfaceController implements Initializable, Features, Converter {
     
    @FXML Label pathLabel;
    @FXML Button browseBtn;
@@ -54,9 +57,20 @@ public class mainInterfaceController implements Initializable, Features {
    @FXML
    public void convertImg(ActionEvent event)
    {
-       String lol = pathLabel.getText();
-       System.out.println(lol);
-       System.out.println(validator);
+       
+       String extension = getExtension(new File(pathLabel.getText()));
+       
+       if (!validator)
+       {
+           alertDialog("File not found!", "File not found, please select one!");
+       }
+       else
+       {
+            if (extension.equals("jpg"))
+            {
+                System.out.println("JPG file has been found!");
+            }
+       }
    }
    
 }
