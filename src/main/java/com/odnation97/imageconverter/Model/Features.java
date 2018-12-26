@@ -11,6 +11,12 @@ import javafx.scene.control.Alert;
 public interface Features 
 {
     
+    default String directory(String nameOfPdf)
+    {
+        String destinationLocation = System.getProperty("user.home") + File.separator + "Desktop" + File.separator + nameOfPdf + ".pdf";
+        return destinationLocation;
+    }
+    
     default void alertDialog(String title, String message)
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

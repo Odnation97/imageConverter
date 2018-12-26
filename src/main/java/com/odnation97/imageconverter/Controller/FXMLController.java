@@ -23,13 +23,11 @@ public class FXMLController implements Initializable, Features, Converter {
    @FXML Label pathLabel;
    @FXML Button browseBtn;
    @FXML Button covertBtn;
-   private String destinationLocation = "";
    private boolean validator = false; // This boolean will indicate the program if an image has been chosen
    
    @Override
     public void initialize(URL url, ResourceBundle rb) {
-        destinationLocation = System.getProperty("user.home") + File.separator + "Desktop";
-        System.out.println(destinationLocation);
+        
     }  
    
    @FXML
@@ -66,7 +64,8 @@ public class FXMLController implements Initializable, Features, Converter {
        {
             if (extension.equals("jpg"))
             {
-                System.out.println("JPG file has been found!");
+                File pdfFile = new File(pathLabel.getText());
+                convertJpg("Test", pdfFile);
             }
        }
    }
