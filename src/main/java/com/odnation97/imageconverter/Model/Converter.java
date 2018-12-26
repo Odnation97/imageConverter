@@ -3,6 +3,7 @@ package com.odnation97.imageconverter.Model;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Image;
+import com.itextpdf.text.PageSize;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,8 +30,10 @@ public interface Converter extends Features
             doc.open();
             
             Image image = Image.getInstance(pathImage);
+            image.setAbsolutePosition(0, 0);
+            image.setBorderWidth(0);
+            image.scaleAbsolute(PageSize.A4);
             doc.add(image);
-            
             doc.close();
         }
         catch (DocumentException e)

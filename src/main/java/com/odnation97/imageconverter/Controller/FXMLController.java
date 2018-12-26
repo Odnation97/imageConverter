@@ -65,7 +65,7 @@ public class FXMLController implements Initializable, Features, Converter {
             if (extension.equals("jpg"))
             {
                 File pdfFile = new File(pathLabel.getText());
-                convertJpg("Test", pdfFile);
+                convertJpg("Wahab", pdfFile);
             }
        }
    }
